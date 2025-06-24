@@ -26,6 +26,7 @@ const App = () => {
   const [correct, setCheckCorrect] = useState(null);
 
 
+  //this is the code from Week 2 flashcards
   /**const goNext = () => {
 
 
