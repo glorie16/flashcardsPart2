@@ -2,7 +2,10 @@
 
 Submitted by: **Gloriele Mendoza**
 
-This web app: **insert description**
+This web app: **has the same Tagalog flashcards as last week's project, but now includes an input bar to enter
+an answer, a check answer button, and both back and next buttons. The input bar turns green if the answer is correct
+and red if the answer is incorrect, and only updates when the card is on the front side. The back and next buttons
+are greyed out when you are at the beginning or end of the cards, and the order of the cards is preserved.**
 
 Time spent: **4** hours spent in total
 
@@ -47,7 +50,10 @@ Here's a walkthrough of implemented user stories:
 
 Gif no sound:
 
+![week3try1](https://github.com/user-attachments/assets/12e3a209-5c0e-4a8f-ae86-640414f1c720)
+
 Imgur post with sound
+https://imgur.com/a/E6W0SWD
 
 <!-- Replace this with whatever GIF tool you used! -->
 GIF created with ...  
