@@ -8,3 +8,52 @@
 .flashcard:hover{
   cursor: pointer;
 }
+
+.greyed {
+  background-color: #ccc;
+  color: #666;
+  cursor: default;
+}
+
+.back-button, .next-button {
+  margin: 1rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+}
+
+input {
+  width: 250px;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+}
+
+input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.4);
+}
+
+.correct{
+  background-color: #b0f9c1;
+  border: 2px solid #155724;
+}
+.incorrect{
+  background-color: #ffa8b0;
+  border: 2px solid #a72c38;
+}
+
+.guess-section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.check-answer{
+  margin-left: 1rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+}

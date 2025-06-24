@@ -6,9 +6,9 @@ const App = () => {
   const flashcards = [
     { word: "Salamat", translation: "Thank you" },
     { word: "Magandang umaga", translation: "Good morning" },
-    { word: "Kain", translation: "To eat" },
+    { word: "Kain", translation: "Eat" },
     { word: "Magandang gabi", translation: "Good evening" },
-    { word: "Paalam", translation: "Goodbye" },
+    { word: "Ingat", translation: "Take care" },
     { word: "Oo", translation: "Yes" },
     { word: "Hindi", translation: "No" },
     { word: "Sige", translation: "Okay" },
@@ -22,8 +22,11 @@ const App = () => {
 
   const card = flashcards[currentIndex];
 
+  const [guess, setGuess] = useState("");
+  const [correct, setCheckCorrect] = useState(null);
 
-  const goNext = () => {
+
+  /**const goNext = () => {
 
 
     let newIndex;
@@ -35,10 +38,30 @@ const App = () => {
     setCurrentIndex(newIndex);
       setFlipped(false);
   };
+
+  **/
+  
+  const goNext = () => {
+    if (currentIndex != flashcards.length - 1) {
+      setCurrentIndex(prevIndex => prevIndex + 1);
+      setFlipped(false);
+      setGuess("");
+      setCheckCorrect(null);
+    }
+  };
+
+  const goBack = () => {
+    if (currentIndex != 0) {
+      setCurrentIndex(prevIndex => prevIndex - 1);
+      setFlipped(false);
+      setGuess("");
+      setCheckCorrect(null);
+    } 
+   
+  };
   
   const handleFlip = () => {
-
-  setFlipped(prev => !prev);
+    setFlipped(prev => !prev);
 };
 
   return (
@@ -53,7 +76,31 @@ const App = () => {
         />
       </div>
 
-       < button onClick = { goNext } className = "next-button" >Next</button>
+    <div className="guess-section">
+      <input
+        type="text"
+        placeholder="Enter your answer here: "
+        value={guess}
+          onChange={(e) => setGuess(e.target.value)}
+          
+          className={`guess-input ${correct === false ? 'incorrect' : correct === true ? 'correct' : ''}`}
+        />
+
+        <button onClick={() => {
+          if (guess.trim() != ""&& flipped===false) {
+            if (guess.toLowerCase() === card.translation.toLowerCase()) {
+              setCheckCorrect(true);
+            } else {
+              setCheckCorrect(false);
+            }
+          }
+        }
+        } className="check-answer">Check Answer</button>
+      </div>
+
+      < button onClick={goBack} className={`back-button ${currentIndex===0 ? 'greyed' : ''}`} >Back</button>
+      < button onClick={goNext} className={`next-button ${currentIndex=== flashcards.length - 1 ? 'greyed' : ''}`} >Next</button>
+      
          </div>
   )
   
